@@ -20,9 +20,15 @@
     p:password="${jdbc.password}" /-->
 
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <bean id="dataSourceApacheDerby" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver" />
         <property name="url" value="jdbc:derby://localhost:1527/springshell;create=true" />
+        <property name="username" value="springshell" />
+        <property name="password" value="springshell.01" />
+    </bean>
+    <bean id="dataSourceMySql" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/springshell" />
         <property name="username" value="springshell" />
         <property name="password" value="springshell.01" />
     </bean>
