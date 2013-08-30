@@ -15,9 +15,12 @@
         <intercept-url pattern="/messageDelete*" access="ROLE_ADMIN" />
     </http>
     <authentication-manager>
-        <authentication-provider>
+        <!--<authentication-provider>
             <user-service properties="/WEB-INF/users.properties" />
-        </authentication-provider>
+        </authentication-provider>-->
+        <authentication-provider>
+            <jdbc-user-service data-source-ref="dataSource" />
+        </authentication-provider>    
     </authentication-manager>
 </beans:beans>
  
